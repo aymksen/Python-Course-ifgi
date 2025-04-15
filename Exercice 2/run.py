@@ -55,22 +55,22 @@ def remove_adjacent(nums):
 def main():
   print('donuts')
   # Test cases for donuts function
-  print(f"donuts(4) returns: {donuts(4)}")          # Expected: Number of donuts: 4
-  print(f"donuts(9) returns: {donuts(9)}")          # Expected: Number of donuts: 9
-  print(f"donuts(10) returns: {donuts(10)}")        # Expected: Number of donuts: many
-  print(f"donuts('twentyone') returns: {donuts('twentyone')}") # Expected: Error: Input must be an integer.
+  print(f"donuts(4) returns: {donuts(4)}")          
+  print(f"donuts(9) returns: {donuts(9)}")         
+  print(f"donuts(10) returns: {donuts(10)}")     
+  print(f"donuts('twentyone') returns: {donuts('twentyone')}") 
 
   print('\nverbing')
   # Test cases for verbing function
-  print(f"verbing('hail') returns: {verbing('hail')}")       # Expected: hailing
-  print(f"verbing('swiming') returns: {verbing('swiming')}") # Expected: swimingly
-  print(f"verbing('do') returns: {verbing('do')}")           # Expected: do
+  print(f"verbing('hail') returns: {verbing('hail')}")      
+  print(f"verbing('swiming') returns: {verbing('swiming')}") 
+  print(f"verbing('do') returns: {verbing('do')}")          
 
   print('\nremove_adjacent')
   # Test cases for remove_adjacent function
-  print(f"remove_adjacent([1, 2, 2, 3]) returns: {remove_adjacent([1, 2, 2, 3])}")       # Expected: [1, 2, 3]
-  print(f"remove_adjacent([2, 2, 3, 3, 3]) returns: {remove_adjacent([2, 2, 3, 3, 3])}") # Expected: [2, 3]
-  print(f"remove_adjacent([]) returns: {remove_adjacent([])}")                         # Expected: []
+  print(f"remove_adjacent([1, 2, 2, 3]) returns: {remove_adjacent([1, 2, 2, 3])}")
+  print(f"remove_adjacent([2, 2, 3, 3, 3]) returns: {remove_adjacent([2, 2, 3, 3, 3])}")
+  print(f"remove_adjacent([]) returns: {remove_adjacent([])}")
 
 # Standard boilerplate to call the main() function.
 if __name__ == '__main__':
