@@ -51,23 +51,21 @@ def remove_adjacent(nums):
       result_list.append(nums[i])
   return result_list
 
-# --- Provided main() function to test the implementations ---
+
 def main():
   print('donuts')
-  # Test cases for donuts function
+    
   print(f"donuts(4) returns: {donuts(4)}")          
   print(f"donuts(9) returns: {donuts(9)}")         
   print(f"donuts(10) returns: {donuts(10)}")     
   print(f"donuts('twentyone') returns: {donuts('twentyone')}") 
 
   print('\nverbing')
-  # Test cases for verbing function
   print(f"verbing('hail') returns: {verbing('hail')}")      
   print(f"verbing('swiming') returns: {verbing('swiming')}") 
   print(f"verbing('do') returns: {verbing('do')}")          
 
   print('\nremove_adjacent')
-  # Test cases for remove_adjacent function
   print(f"remove_adjacent([1, 2, 2, 3]) returns: {remove_adjacent([1, 2, 2, 3])}")
   print(f"remove_adjacent([2, 2, 3, 3, 3]) returns: {remove_adjacent([2, 2, 3, 3, 3])}")
   print(f"remove_adjacent([]) returns: {remove_adjacent([])}")
