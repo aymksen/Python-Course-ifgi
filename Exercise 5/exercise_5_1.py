@@ -24,26 +24,32 @@ request=QgsFeatureRequest().setOrderBy(orderby)
 districts_names=[]
 for feature in districts.getFeatures(request):
     districts_names.append(feature["Name"])
-#print(districts_names)
 
 sDistrict, bOk = QInputDialog.getItem(parent, "District Names", "Select District: ",districts_names)
 if not bOk:
     QMessageBox.warning(parent, "Process Cancelled", "The user has cancelled the process")
 else:
-    #get the geometry o fteh selected district
+    #get the geometry  and centroid of the selected district
     for dist in districts.getFeatures():
         if(dist["Name"]== sDistrict):
             dGeo = dist.geometry()
+            dGeoCen = dGeo.centroid()
         else:
             continue
     #get all the schools init
     sInDist=[]
+    #For calculate the ditance to district center
+    da = QgsDistanceArea()
+    da.setEllipsoid("ETRS89")
+    
     for school in schools.getFeatures():
         if dGeo.contains(school.geometry()):
-            sInDist.append(str(school["Name"])+ ", " + str(school["SchoolType"]) )
+            distToCen = da.measureLine([QgsPointXY(dGeoCen.get().x(),dGeoCen.get().y()),QgsPointXY(school.geometry().get().x(),school.geometry().get().y())])/1000
+            distToCen = round(distToCen, 2)
+            #format the string as required
+            sInDist.append(str(school["Name"])+ ", " + str(school["SchoolType"]) + "\nDistance to district center: "+str(distToCen)+"km" )
             
     sInDist.sort()
-    #print(sInDist)
     
     #infor box shows only strings so convert the list to string
     sch = ""
